@@ -22,9 +22,9 @@ type CartState = {
     productId: string,
     variantId: string,
     quantity: number,
-    productName: string,
+    productName: string | null | undefined,
   ) => void;
-  removeItem: (wixClient: WixClient, itemId: string, productName: string) => void;
+  removeItem: (wixClient: WixClient, itemId: string, productName: string | null | undefined) => void;
 };
 
 export const useCartStore = create<CartState>((set) => ({

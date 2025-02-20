@@ -13,7 +13,7 @@ const Add = ({
   productId: string;
   variantId: string;
   stockNumber: number;
-  productName: string;
+  productName: string | null | undefined;
 }) => {
   const [quantity, setQuantity] = useState(1);
 

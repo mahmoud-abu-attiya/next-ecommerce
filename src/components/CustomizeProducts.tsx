@@ -13,7 +13,7 @@ const CustomizeProducts = ({
   productId: string;
   variants: products.Variant[];
   productOptions: products.ProductOption[];
-  productName: string;
+  productName: string | null | undefined;
 }) => {
   const [selectedOptions, setSelectedOptions] = useState<{
     [key: string]: string;
