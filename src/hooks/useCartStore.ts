@@ -13,7 +13,7 @@ const notify = (content: string, state: string) => {
 };
 
 type CartState = {
-  cart: currentCart.Cart;
+  cart: any;
   isLoading: boolean;
   counter: number;
   getCart: (wixClient: WixClient) => void;

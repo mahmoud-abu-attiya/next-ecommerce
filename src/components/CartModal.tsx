@@ -50,7 +50,7 @@ const CartModal = () => {
           {/* LIST */}
           <div className="flex flex-col gap-8">
             {/* ITEM */}
-            {cart.lineItems.map((item) => (
+            {cart.lineItems.map((item: any) => (
               <div className="flex gap-4" key={item._id}>
                 {item.image && (
                   <Image
