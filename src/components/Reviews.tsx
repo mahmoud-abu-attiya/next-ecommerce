@@ -3,7 +3,7 @@ import Image from "next/image";
 const Reviews = async ({ productId }: { productId: string }) => {
   const options = {
     method: 'GET',
-    headers: {accept: 'application/json', 'Public-Key': process.env.NEXT_PUBLIC_FERA_ID}
+    headers: {accept: 'application/json', 'Public-Key': process.env.NEXT_PUBLIC_FERA_ID || ''}
   };
   const url = `https://api.fera.ai/v3/public/reviews/`;
   const reviewRes = await fetch(url, options);

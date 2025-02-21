@@ -2,7 +2,6 @@ import Add from "@/components/Add";
 import CustomizeProducts from "@/components/CustomizeProducts";
 import ProductImages from "@/components/ProductImages";
 import Reviews from "@/components/Reviews";
-import Toast from "@/components/Toast";
 import { wixClientServer } from "@/lib/wixClientServer";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -27,7 +26,6 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
       product.priceData?.price!) *
     100
   ) : null;
-  console.log(discountPercentage);
 
 
 
