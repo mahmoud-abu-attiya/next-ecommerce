@@ -26,11 +26,11 @@ const Navbar = () => {
             <div className="text-2xl tracking-wide">LAMA</div>
           </Link>
           <div className="hidden xl:flex gap-4">
-            <Link href="/">Homepage</Link>
-            <Link href="/">Shop</Link>
-            <Link href="/">Deals</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Contact</Link>
+            <Link className="border-b border-transparent hover:border-black transition" href="/">Home</Link>
+            <Link className="border-b border-transparent hover:border-black transition" href="/list">Shop</Link>
+            <Link className="border-b border-transparent hover:border-black transition" href="/">Deals</Link>
+            <Link className="border-b border-transparent hover:border-black transition" href="/about">About</Link>
+            <Link className="border-b border-transparent hover:border-black transition" href="/contact">Contact</Link>
           </div>
         </div>
         {/* RIGHT */}

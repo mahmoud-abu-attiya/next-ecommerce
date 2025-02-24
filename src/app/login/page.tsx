@@ -2,7 +2,7 @@
 
 import { useWixClient } from "@/hooks/useWixClient";
 import { LoginState } from "@wix/sdk";
-import { useRouter } from "next/navigation";
+import { redirect } from 'next/navigation'
 import Cookies from "js-cookie";
 import { useState } from "react";
 
@@ -15,12 +15,11 @@ enum MODE {
 
 const LoginPage = () => {
   const wixClient = useWixClient();
-  const router = useRouter();
 
   const isLoggedIn = wixClient.auth.loggedIn();
 
   if (isLoggedIn) {
-    router.push("/");
+    redirect("/profile");
   }
 
   const [mode, setMode] = useState(MODE.LOGIN);
@@ -100,7 +99,7 @@ const LoginPage = () => {
             expires: 2,
           });
           wixClient.auth.setTokens(tokens);
-          router.push("/");
+          window.location.href = "/";
           break;
         case LoginState.FAILURE:
           if (
@@ -134,6 +133,11 @@ const LoginPage = () => {
     <div className="h-[calc(100vh-80px)] container flex items-center justify-center">
       <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
         <h1 className="text-2xl font-semibold">{formTitle}</h1>
+        {mode === MODE.LOGIN && (
+          <div className="p-4 bg-gray-100 rounded">
+            <span className="text-sm text-gray-600">Use this data for test email: <span className="font-bold">hoyece4177@envoes.com</span>, password: <span className="font-bold">12345678</span></span>
+          </div>
+          )}
         {mode === MODE.REGISTER ? (
           <div className="flex flex-col gap-2">
             <label className="text-sm text-gray-700">Username</label>

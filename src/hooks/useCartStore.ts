@@ -1,7 +1,7 @@
 import { create } from "zustand";
-import { currentCart } from "@wix/ecom";
+// import { currentCart } from "@wix/ecom";
 import { WixClient } from "@/context/wixContext";
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 import { toast } from 'react-toastify';
 
 const notify = (content: string, state: string) => {

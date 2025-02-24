@@ -31,13 +31,13 @@ const Menu = () => {
       />
       {/* {open && ( */}
         <div className={`absolute bg-black text-white right-0 top-20 w-[70vw] h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-8 text-xl z-20 transition ${!open ? "translate-x-full" : "translate-x-0"}`}>
-          <Link href="/">Homepage</Link>
-          <Link href="/">Shop</Link>
+          <Link href="/">Home</Link>
+          <Link href="/list">Shop</Link>
           <Link href="/">Deals</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
           <Link href="/">Logout</Link>
-          <Link href="/">Cart({counter})</Link>
+          <Link href="/cart">Cart({counter})</Link>
         </div>
       {/* )} */}
     </div>
