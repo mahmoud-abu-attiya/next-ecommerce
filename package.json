@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@wix/ecom": "^1.0.916",
-    "@wix/members": "^1.0.184",
+    "@wix/members": "^1.0.194",
     "@wix/sdk": "^1.15.10",
     "@wix/stores": "^1.0.353",
     "isomorphic-dompurify": "^2.21.0",
@@ -19,7 +19,6 @@
     "react": "^18",
     "react-dom": "^18",
     "react-toastify": "^11.0.3",
-    "sweetalert2": "^11.16.0",
     "zustand": "^5.0.3"
   },
   "devDependencies": {

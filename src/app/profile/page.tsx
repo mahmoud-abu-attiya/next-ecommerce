@@ -1,11 +1,11 @@
 'use client'
 import { useWixClient } from "@/hooks/useWixClient";
-import { useRouter } from "next/navigation";
 import { useEffect, useState, useMemo } from "react";
 import Cookies from "js-cookie";
 import Link from "next/link";
 import { products } from "@wix/stores";
 import ProductCard from "@/components/ProductCard";
+import { members } from "@wix/members";
 
 const profileLinks = [
   {
@@ -28,10 +28,10 @@ const profileLinks = [
 
 const Profile = () => {
   const [action, setAction] = useState('profile');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [userData, setUserDAta] = useState<any>();
   const [products, setProducts] = useState<products.Product[]>([]);
   const wixClient = useWixClient();
-  const router = useRouter();
   const memoizedProducts = useMemo(() => products, [products]);
 
   const getProducts = async (limit: number) => {
@@ -39,6 +39,15 @@ const Profile = () => {
     const res = await productQuery.find();
     setProducts(res.items);
   };
+
+  // const getUserData = async () => {
+    
+  //   const user = await members.getCurrentMember({
+  //     fieldsets: [members.Set.FULL],
+  //   });
+  //   console.log(user.member);
+  //   // setUserDAta(user);
+  // }
 
 
   const handleLogout = async () => {
@@ -60,6 +69,7 @@ const Profile = () => {
     if (action === 'wishlist') {
       getProducts(4);
     }
+    // getUserData();
   }, [action])
   return (
     <div className='container grid grid-cols-4 gap-4'>
